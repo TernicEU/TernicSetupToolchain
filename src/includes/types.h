@@ -29,14 +29,16 @@ typedef int64_t  ssize_t;
 typedef uint64_t uintptr_t;
 typedef int64_t  intptr_t;
 
-/*
- * Boolean type (C-style)
- */
+/* Boolean type */
 
+#ifdef __cplusplus
+typedef bool bool_t;
+#else
 typedef enum {
     false = 0,
     true  = 1
-} bool;
+} bool_t;
+#endif
 
 /*
  * Common OS types

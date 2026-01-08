@@ -1,9 +1,9 @@
-#include <cstdlib>
-#include <string>
+#include "types.h"
+
+extern "C" int system(const char*);
 
 int main() {
-    std::string filename = "test.txt";
-    std::string cmd = "cat " + filename;
-
-    system(cmd.c_str());  // convert to const char*
+    const char* cmd = "cat test.txt";
+    int32_t result = system(cmd);
+    return result == -1;
 }
